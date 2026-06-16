@@ -1,0 +1,34 @@
+{
+  "name": "fixforge",
+  "version": "1.0.0",
+  "description": "AI-powered terminal code debugger & fixer using Groq LLM",
+  "module": "src/index.ts",
+  "main": "src/index.ts",
+  "bin": {
+    "fixforge": "./src/index.ts"
+  },
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun --watch src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target bun"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1",
+    "boxen": "^7.1.1",
+    "cli-table3": "^0.6.3",
+    "inquirer": "^9.2.12",
+    "diff": "^5.2.0",
+    "glob": "^10.3.10",
+    "groq-sdk": "^0.7.0",
+    "openai": "^4.28.0"
+  },
+  "devDependencies": {
+    "@types/diff": "^5.2.1",
+    "@types/inquirer": "^9.0.7",
+    "typescript": "^5.3.3"
+  },
+  "type": "module",
+  "keywords": ["cli", "ai", "debugging", "groq", "bun", "code-fixer"],
+  "license": "MIT"
+}
