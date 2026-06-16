@@ -14,11 +14,17 @@
 ## 🚀 Installation
 
 ```bash
-# With Bun (recommended)
-bun add -g fixforge
+# Run instantly without installing (using Bun)
+bunx fixforge-cli
 
-# With npm
-npm install -g fixforge
+# Run instantly without installing (using Node/npm)
+npx fixforge-cli
+
+# Install globally with Bun (recommended)
+bun add -g fixforge-cli
+
+# Install globally with npm
+npm install -g fixforge-cli
 ```
 
 ## ⚡ Quick Start
