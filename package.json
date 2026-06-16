@@ -1,5 +1,5 @@
 {
-  "name": "fixforge",
+  "name": "@charanbalaji2005/fixforge",
   "version": "1.0.0",
   "description": "AI-powered terminal code debugger & fixer using Groq LLM",
   "module": "src/index.ts",
