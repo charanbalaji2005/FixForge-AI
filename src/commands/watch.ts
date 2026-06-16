@@ -7,22 +7,25 @@ import chalk from "chalk";
 export async function runWatch(config: Config): Promise<void> {
   sectionHeader("👁️  Watch Mode");
 
-  console.log(chalk.cyan("  FixForge Watch detects errors from your terminal output.\n"));
+  console.log(chalk.cyan("  FixForge Watch automatically sets up your project and monitors for errors.\n"));
 
-  const { cmd } = await promptWithEsc([
-    {
-      type: "input",
-      name: "cmd",
-      message: chalk.cyan("Command to watch (e.g. bun run dev):"),
-      default: "bun run dev",
-    },
-  ]);
+  const packageJsonFile = Bun.file("package.json");
+  if (await packageJsonFile.exists()) {
+    log("info", "Running 'bun install' in the background...");
+    try {
+      const installProc = Bun.spawn(["bun", "install"], { cwd: process.cwd() });
+      await installProc.exited;
+      log("success", "Dependencies verified.");
+    } catch (e) {
+      log("warn", "Could not run bun install: " + (e as Error).message);
+    }
+  }
 
-  console.log(chalk.dim(`\n  Starting: ${cmd}\n`));
+  const cmd = "bun run dev";
+  log("info", `Starting dev server in the background (${cmd})...`);
   log("info", "Watching for errors... Press Ctrl+C to stop.\n");
 
-  const [bin, ...args] = cmd.split(" ");
-  const proc = Bun.spawn([bin, ...args], {
+  const proc = Bun.spawn(["bun", "run", "dev"], {
     stdout: "pipe",
     stderr: "pipe",
     cwd: process.cwd(),
