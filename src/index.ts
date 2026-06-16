@@ -28,7 +28,7 @@ export {
 };
 import type { Config } from "./types/index.ts";
 
-const VERSION = "1.0.0";
+const VERSION = "2.0.0";
 
 async function showStatus(config: Config): Promise<void> {
   const providerLabel = config.useFree
