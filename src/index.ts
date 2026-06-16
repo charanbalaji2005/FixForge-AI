@@ -3,16 +3,29 @@ import inquirer from "inquirer";
 import chalk from "chalk";
 import { loadConfig } from "./config/index.ts";
 import { banner, sectionHeader, log, infoBox, createTable, promptWithEsc } from "./ui/index.ts";
-export { runScan } from "./commands/scan.ts";
-export { runFix } from "./commands/fix.ts";
-export { runExplain } from "./commands/explain.ts";
-export { runSecurity } from "./commands/security.ts";
-export { runReview } from "./commands/review.ts";
-export { runDoctor } from "./commands/doctor.ts";
-export { runWatch } from "./commands/watch.ts";
-export { runRefactor } from "./commands/refactor.ts";
-export { runProvider } from "./commands/provider.ts";
-export { runChat } from "./commands/chat.ts";
+import { runScan } from "./commands/scan.ts";
+import { runFix } from "./commands/fix.ts";
+import { runExplain } from "./commands/explain.ts";
+import { runSecurity } from "./commands/security.ts";
+import { runReview } from "./commands/review.ts";
+import { runDoctor } from "./commands/doctor.ts";
+import { runWatch } from "./commands/watch.ts";
+import { runRefactor } from "./commands/refactor.ts";
+import { runProvider } from "./commands/provider.ts";
+import { runChat } from "./commands/chat.ts";
+
+export {
+  runScan,
+  runFix,
+  runExplain,
+  runSecurity,
+  runReview,
+  runDoctor,
+  runWatch,
+  runRefactor,
+  runProvider,
+  runChat,
+};
 import type { Config } from "./types/index.ts";
 
 const VERSION = "1.0.0";
